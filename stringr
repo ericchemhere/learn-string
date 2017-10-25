@@ -31,3 +31,20 @@ girl_length <- str_length(girl_names)
 mean(boy_length) - mean(girl_length)
 # Confirm str_length() works with factors
 head(factor(boy_names))
+
+# Lecture 3 str_sub
+# Extract first letter from boy_names
+boy_first_letter <- str_sub(boy_names, start = 1, end = 1)
+# Tabulate occurrences of boy_first_letter
+table(boy_first_letter)  
+# Extract the last letter in boy_names, then tabulate
+boy_last_letter <- str_sub(boy_names, start = -1, end = -1)
+table(boy_last_letter)
+plot(table(boy_last_letter))
+# Extract the first letter in girl_names, then tabulate
+girl_first_letter <- str_sub(girl_names, start = 1, end = 1)
+table(girl_first_letter)
+# Extract the last letter in girl_names, then tabulate
+girl_last_letter <- str_sub(girl_names, start = -1, end = -1)
+table(girl_last_letter)
+plot(table(girl_last_letter))
