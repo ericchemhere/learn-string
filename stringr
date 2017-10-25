@@ -108,3 +108,15 @@ str_split(start_dates, pattern = fixed("."), simplify = TRUE, n = 3)
 both_names <- c("Box, George", "Cox, David")
 both_names_split <- str_split(both_names, pattern = ", ", simplify = TRUE)
 first_names <- both_names_split[, 2]last_names <- both_names_split[, 1]
+
+# Lecture 8 using lapply...
+# Split lines into words
+lines[1] #[1] "The table was a large one, but the three were all crowded together at one corner of it:"
+words <- str_split(lines, pattern = " ")
+# Number of words per line
+lapply(words, length)  
+# Number of characters in each word
+word_lengths <- lapply(words, str_length)
+word_lengths  
+# Average word length per line
+lapply(word_lengths, mean)
