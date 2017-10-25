@@ -71,3 +71,21 @@ str_subset(girl_names, pattern = "zz")
 starts_U <- str_subset(girl_names, pattern = "U")starts_U
 # Find girl_names that contain "U" and "z"
 str_subset(starts_U, pattern = "z")
+
+# Lecture 6
+# Count occurrences of "a" in girl_names
+is.vector(girl_names) #TRUE
+length(girl_names) #19067
+number_as <- str_count(girl_names, pattern = "a")
+head(number_as)
+length(number_as) #19067
+# Count occurrences of "A" in girl_names
+number_As <- str_count(girl_names, pattern = "A")
+# Histograms of number_as and number_As
+hist(number_as)
+hist(number_As)
+# Find total "a" + "A"
+total_as <- number_as + number_As
+length(total_as) #19067
+# girl_names with more than 4 a's
+girl_names[total_as > 4]
