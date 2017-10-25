@@ -61,3 +61,13 @@ boy_names[contains_zz]
 # Which rows in boy_df have names that contain "zz"?
 head(boy_df)
 boy_df[contains_zz, ]
+
+# Lecture 5 str_subset
+# Find boy_names that contain "zz"
+str_subset(boy_names, pattern = "zz")
+# Find girl_names that contain "zz"
+str_subset(girl_names, pattern = "zz")
+# Find girl_names that contain "U"
+starts_U <- str_subset(girl_names, pattern = "U")starts_U
+# Find girl_names that contain "U" and "z"
+str_subset(starts_U, pattern = "z")
