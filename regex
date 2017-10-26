@@ -1,1 +1,19 @@
 # ABOUT REGULAR EXPRESSIONS
+
+Regular expressions can be used in any stringr function in a pattern argument
+
+# Lecture 1
+library(rebus)
+library(stringr)
+# Some strings to practice with
+x <- c("cat", "coat", "scotland", "tic toc")
+# Print END
+END
+# Run me
+str_view(x, pattern = START %R% "c")
+# Match the strings that start with "co" 
+str_view(x, pattern = START %R% "co")
+# Match the strings that end with "at"
+str_view(x, pattern =  "at" %R% END)
+# Match the strings that is exactly "cat"
+str_view(x, pattern = START %R% "cat" %R%  END)
