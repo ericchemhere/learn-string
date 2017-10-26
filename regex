@@ -131,3 +131,19 @@ str_view(narratives,   pattern = age %R% unit %R% gender)
 # Extract age_gender, take a look
 age_gender <- str_extract(narratives, age %R% unit %R% gender)
 age_gender
+
+# Lecture 9
+# age_gender, age, gender, unit are pre-defined
+ls.str()
+# Extract age and make numeric
+ages_numeric <- str_extract(age_gender, pattern = age) %>% as.numeric()
+# Replace age and units with ""
+genders <- str_replace(age_gender,   pattern = age %R% unit,   replacement = "")
+# Replace extra spaces
+genders_clean <- str_replace_all(genders,   pattern = SPC,   replacement = "")
+# Extract units 
+time_units <- str_extract(age_gender, pattern = unit)
+# Extract first word character
+time_units_clean <- str_extract(time_units, pattern = WRD)
+# Turn ages in months to years
+ages_years <- ifelse(time_units_clean == "Y", ages_numeric, ages_numeric/12)
