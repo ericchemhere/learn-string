@@ -17,3 +17,14 @@ str_view(x, pattern = START %R% "co")
 str_view(x, pattern =  "at" %R% END)
 # Match the strings that is exactly "cat"
 str_view(x, pattern = START %R% "cat" %R%  END)
+
+# Lecture 2
+x <- c("cat", "coat", "scotland", "tic toc")
+# Match any character followed by a "t"
+str_view(x, pattern = ANY_CHAR %R% "t")
+# Match a "t" followed by any character
+str_view(x, pattern = "t" %R% ANY_CHAR)
+# Match two characters
+str_view(x, pattern = ANY_CHAR %R% ANY_CHAR)
+# Match a string with exactly three characters
+str_view(x, pattern = START %R% ANY_CHAR %R% ANY_CHAR %R% ANY_CHAR %R% END)
