@@ -61,3 +61,20 @@ str_view(boy_names,   pattern = by_parts,   match = TRUE)
 # Match names that start with Cath or Kath
 ckath <- START %R% or("C", "K") %R% "ath"
 str_view(girl_names, pattern = ckath, match = TRUE)
+
+# Lecture 5
+# Create character class containing vowels
+vowels <- char_class("Aa", "Ee", "Ii", "Oo", "Uu")
+# Print vowels
+vowels
+# See vowels in x with str_view()
+x # [1] "grey sky"      "gray elephant"
+str_view(x, pattern = vowels)
+# See vowels in x with str_view_all()
+str_view_all(x, pattern = vowels)
+# Number of vowels in boy_names
+num_vowels <- str_count(boy_names, pattern = vowels)
+mean(num_vowels)
+# Proportion of vowels in boy_names
+name_length <- str_length(boy_names)
+mean(num_vowels/name_length)
